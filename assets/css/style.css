@@ -1,0 +1,90 @@
+/*code for the index.html header (and any other elements that share the same class/type name)*/
+.header-area {
+  background-color: #f4f4f4;
+  width: 80%;
+  position: absolute;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-radius: 20px;
+  z-index: 1;
+  transform: translate(12%, 0);
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  font-weight: 1000;
+  font-style: italic;
+  padding: 10px;
+  foat: center;
+  text-align: center;
+}
+
+.select-menu table {
+  float: center;
+}
+
+.select-menu table tr {
+  display: inline;
+  position: relative;
+}
+
+.select-menu table tr td a {
+  color: #131230;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 13px;
+  text-decoration: none;
+}
+
+.select-menu table tr td a:hover {
+  font-weight: 700;
+  color: red;
+}
+
+/*code for the banner (and any other elements that share the same class/type name)*/
+.banner-area {
+  font-family: "Playfair Display", serif;
+  background-color: #b0b0b0;
+  position: relative;
+  height: 100vh;
+  padding-top: 50vh;
+}
+
+/*code for the footer (and any other elements that share the same class/type name)*/
+.footer-area {
+  background-color: #b0b0b0;
+  border-top: 1px black solid;
+}
+
+.footer-widgets {
+  padding: 20px;
+  background-color: #b0b0b0;
+}
+
+.footer-widgets a {
+  color: #131230;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 13px;
+  text-decoration: none;
+}
+
+.footer-widgets a:hover {
+  font-weight: 700;
+  color: red;
+}
+
+.footer-widgets h6 {
+  padding: 13px;
+  font-weight: 800;
+  margin-bottom: -10px;
+}
+
+.credits-area {
+  background-color: #f4f4f4;
+}
