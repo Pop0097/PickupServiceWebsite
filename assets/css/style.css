@@ -1,4 +1,4 @@
-/*code for the index.html header (and any other elements that share the same class/type name)*/
+/*code for the header (and any other elements that share the same class/type name)*/
 .header-area {
   background-color: #f4f4f4;
   width: 80%;
@@ -12,10 +12,10 @@
 
 h2 {
   font-family: "Playfair Display", serif;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 1000;
   font-style: italic;
-  padding: 10px;
+  padding: 5px;
   foat: center;
   text-align: center;
 }
@@ -44,7 +44,7 @@ h2 {
   color: red;
 }
 
-/*code for the banner (and any other elements that share the same class/type name)*/
+/*code for the index.html banner (and any other elements that share the same class/type name)*/
 .banner-area {
   font-family: "Playfair Display", serif;
   background-color: #b0b0b0;
@@ -53,10 +53,248 @@ h2 {
   padding-top: 50vh;
 }
 
+/*code for the "quick information" in index.html(and any other elements that share the same class/type name)*/
+.information-area {
+  position: relative;
+  height: 100vh;
+}
+
+.information-area-image {
+  position: relative;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  height: 360px;
+  width: 360px;
+}
+
+.intro {
+  padding: 30px;
+  margin-right: 50px;
+}
+
+.intro p {
+  font-size: 16px;
+  vertical-align: center;
+}
+
+@media (max-width:992px) {
+  .information-area-image {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height: 360px;
+    width: 360px;
+  }
+
+  .subtitle {
+    margin-top: 10px;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width:768px) {
+  .information-area-image {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (max-width:576px) {
+  .information-area-image {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    height: 260px;
+    width: 260px;
+  }
+}
+
+/*code for the "menu preview" in index.html (and any other elements that share the same class/type name)*/
+.menu-preview-area {
+  min-height: 100vh;
+}
+
+.menu-preview-item {
+  margin: 20px;
+  padding-bottom: 20px;
+}
+
+.item {
+  width: 250px;
+  background-color: #f4f4f4;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.item:hover {
+  background-color: #ffcc66;
+}
+
+.item:hover h5 {
+  font-weight: 1000;
+}
+
+.item:hover img {
+  -webkit-transform: scale(1.05, 1.05);
+  -moz-transform: scale(1.05, 1.05);
+  -ms-transform: scale(1.05, 1.05);
+  -o-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+  border-radius: 20px 20px 20px 20px;
+}
+
+.menu-preview-image {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px 20px 0 0;
+}
+
+.menu-preview-description h5 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+
+.menu-preview-description {
+  width: 250px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.redirect-link {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.redirect-link a {
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.redirect-link a:hover {
+  font-weight: 700;
+  color: red;
+}
+
+@media(max-width:992px) {
+  .item {
+    width: 205px;
+    background-color: #f4f4f4;
+  }
+
+  .menu-preview-image {
+    height: 205px;
+    width: 205px;
+  }
+
+  .menu-preview-description {
+    width: 205px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .menu-preview-description h5 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+  }
+}
+
+@media(max-width:576px) {
+  .item {
+    width: 160px;
+    background-color: #f4f4f4;
+  }
+
+  .menu-preview-image {
+    height: 160px;
+    width: 160px;
+  }
+
+  .menu-preview-description {
+    width: 160px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .menu-preview-description h5 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+  }
+}
+
+/*code for the "reviews" in index.html (and any other elements that share the same class/type name)*/
+.reviews-area {
+  min-height: 50vh;
+  border-bottom: 1px solid black;
+}
+
+.reviews {
+  display: none;
+}
+
+.slideshow-area {
+  max-width: 1000px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 9px 0 0 9px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 9px 9px 0;
+}
+
+.next:hover, .prev:hover {
+  background-color: #404040;
+}
+
+.text {}
+
+.text h3 {
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
+}
+
+.text p {
+  font-size: 16px;
+}
+
 /*code for the footer (and any other elements that share the same class/type name)*/
 .footer-area {
   background-color: #b0b0b0;
-  border-top: 1px black solid;
 }
 
 .footer-widgets {
@@ -87,4 +325,33 @@ h2 {
 
 .credits-area {
   background-color: #f4f4f4;
+}
+
+/*code used in all sections*/
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.subtitle {
+  margin-top: 40px;
+  padding-left: 30px;
+}
+
+.subtitle-2 {
+  margin-top: 40px;
+  padding-left: 30px;
+  margin-bottom: 40px;
+}
+
+.subtitle h3, .subtitle-2 h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  font-style: italic;
+  foat: center;
+}
+
+.subtitle p {
+  font-size: 16px;
 }

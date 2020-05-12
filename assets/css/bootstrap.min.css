@@ -8237,8 +8237,16 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
   width: 100vw !important
 }
 
+.vh-60 {
+  height: 60vh !important
+}
+
 .vh-100 {
   height: 100vh !important
+}
+
+.mvh-100 {
+  min-height: 100vh !important
 }
 
 .stretched-link::after {
