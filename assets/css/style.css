@@ -44,6 +44,10 @@ h2 {
   color: red;
 }
 
+.select-menu table tr td a.active {
+  text-decoration: underline;
+}
+
 /*code for the index.html banner (and any other elements that share the same class/type name)*/
 .banner-area {
   font-family: "Playfair Display", serif;
@@ -281,8 +285,6 @@ h2 {
   background-color: #404040;
 }
 
-.text {}
-
 .text h3 {
   font-size: 30px;
   font-family: "Playfair Display", serif;
@@ -290,6 +292,60 @@ h2 {
 
 .text p {
   font-size: 16px;
+}
+
+/*code for the "Question" in index.html (and any other elements that share the same class/type name)*/
+.question-form-area {
+  min-height: 80vh;
+}
+
+.question-form {
+  max-width: 1000px;
+  padding-left: 40px;
+  padding-right: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.question-form-label {
+  font-size: 16px;
+  font-weight: 1200;
+}
+
+#name-input, #email-input, #subject-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #b0b0b0;
+  height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#message-input {
+  width: 100%;
+  min-height: 100px;
+  max-height: 300px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #b0b0b0;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#submit-button {
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  background-color: #f4ffff;
+  border: 1px solid #b0b0b0;
 }
 
 /*code for the footer (and any other elements that share the same class/type name)*/

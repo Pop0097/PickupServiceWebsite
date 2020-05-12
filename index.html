@@ -24,6 +24,7 @@
               <td> <a class="active" href="index.html">Home</a> </td>
               <td> <a href="about.html">About</a> </td>
               <td> <a href="menu.html">Menu</a></td>
+              <td> <a href="gallery.html">Gallery</a></td>
             </tr>
           </table>
         </div>
@@ -231,13 +232,39 @@
 
   <!-- Question form starts -->
   <section class="question-form-area">
+    <div class="container-fluid">
+      <div class="subtitle-2 text-center">
+        <h3>Ask a question</h3>
+      </div>
+      <div class="form-area">
+        <form class="question-form text-center center" method="POST" style="background-color:#f4f4ff">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <label class="question-form-label">Name: </label><br>
+              <input type="text" id="name-input" name="name" value="Name" maxlength="60">
+            </div>
+            <div class="col-12 col-md-6">
+              <label class="question-form-label">Email Address: </label><br>
+              <input type="email" id="email-input" name="email" value="Email" maxlength="60">
+            </div>
+            <div class="col-12">
+              <label class="question-form-label">Subject:</label><br>
+              <input type="text" id="subject-input" name="subject" value="Subject" maxlength="150">
+            </div>
+            <div class="col-12">
+              <label class="question-form-label">Message:</label><br>
+              <textarea id="message-input" name="messge" value="Message" cols="15"></textarea>
+            </div>
+            <div class="col-12">
+              <input type="submit" id="submit-button" value="Submit">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
   </section>
   <!-- Question form ends -->
-
-  <!-- gallery starts -->
-  <section class="gallery-area">
-  </section>
-  <!-- gallery ends -->
 
   <!-- footer starts -->
   <footer class="footer-area">
@@ -266,4 +293,8 @@
       </div>
     </div>
   </footer>
-  <!-- footer ends </body> </html>
+  <!-- footer ends -->
+
+</body>
+
+</html>
