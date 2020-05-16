@@ -64,14 +64,6 @@
   height: 100vh;
 }
 
-.information-area-image {
-  position: relative;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  height: 360px;
-  width: 360px;
-}
-
 .intro {
   padding: 30px;
   margin-right: 50px;
@@ -79,7 +71,14 @@
 
 .intro p {
   font-size: 16px;
-  vertical-align: center;
+}
+
+.information-area-image {
+  position: relative;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  height: 360px;
+  width: 360px;
 }
 
 @media (max-width:992px) {
@@ -120,6 +119,7 @@
 /*code for the "menu preview" in index.html (and any other elements that share the same class/type name)*/
 .menu-preview-area {
   min-height: 100vh;
+  margin-bottom: 100px;
 }
 
 .menu-preview-item {
@@ -237,8 +237,8 @@
 
 /*code for the "reviews" in index.html (and any other elements that share the same class/type name)*/
 .reviews-area {
-  min-height: 50vh;
-  border-bottom: 1px solid black;
+  min-height: 60vh;
+  margin-bottom: 100px;
 }
 
 .reviews {
@@ -349,6 +349,92 @@
   border: 1px solid #b0b0b0;
 }
 
+/*code for about.html*/
+/*code for the banner in about.html, menu.html, and gallery.html*/
+.banner-area-2 {
+  font-family: "Playfair Display", serif;
+  background-color: #b0b0b0;
+  position: relative;
+  height: 100vh;
+  padding-top: 50vh;
+}
+
+/*code for the mission statement*/
+.mission-statment-area {
+  min-height: 100vh;
+}
+
+/*code for the service information*/
+.service-information-area {
+  min-height: 100vh;
+}
+
+.service-information-text {
+  font-size: 16px;
+  padding: 40px;
+  margin-bottom: auto;
+  display: block;
+}
+
+@media (max-width:992px) {
+  .service-information-text {
+    font-size: 16px;
+    padding: 20px;
+    margin-bottom: -30px;
+  }
+}
+
+/*code for menu.html*/
+/*code for the banner in menu.html*/
+.banner-area-2 {
+  font-family: "Playfair Display", serif;
+  background-color: #b0b0b0;
+  position: relative;
+  height: 100vh;
+  padding-top: 50vh;
+}
+
+/*code for the "Title" in menu.html*/
+.title-area {
+  height: 15vh;
+  padding: 40px;
+}
+
+.menu-title-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 50px;
+  font-style: italic;
+  foat: center;
+}
+
+/*code for the "items" in menu.html*/
+.pre-item-text {
+  text-align: center;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+.add-to-cart-button {
+  width: 70px;
+  border-radius: 10px;
+  height: 30px;
+  font-size: 14px;
+  background-color: #f4f4f4;
+  border: 1px solid #b0b0b0;
+}
+
+.add-to-cart-button:hover {
+  background-color: #81B42C;
+  border: 1px solid #b0b0b0;
+}
+
+.disclaimer-text {
+  text-align: center;
+}
+
+/*code used in all sections*/
 /*code for the footer (and any other elements that share the same class/type name)*/
 .footer-area {
   background-color: #b0b0b0;
@@ -384,35 +470,7 @@
   background-color: #f4f4f4;
 }
 
-/*code for menu.html*/
-/*code for the banner in menu.html*/
-.banner-area-2 {
-  font-family: "Playfair Display", serif;
-  background-color: #b0b0b0;
-  position: relative;
-  height: 100vh;
-  padding-top: 50vh;
-}
-
-/*code for the "Title" in menu.html*/
-.title-area {
-  height: 15vh;
-  padding: 40px;
-}
-
-.menu-title-text h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 50px;
-  font-style: italic;
-  foat: center;
-}
-
-/*code for the "items" in menu.html*/
-.tab-content {
-  width: 100%;
-}
-
-/*code used in all sections*/
+/*General code*/
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -430,7 +488,12 @@
   margin-bottom: 40px;
 }
 
-.subtitle h3, .subtitle-2 h3 {
+.subtitle-3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.subtitle h3, .subtitle-2 h3, .subtitle-3 h3 {
   font-family: "Playfair Display", serif;
   font-size: 35px;
   font-style: italic;

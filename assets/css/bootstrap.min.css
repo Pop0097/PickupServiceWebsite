@@ -426,13 +426,33 @@ hr {
 
 .blockquote {
   margin-bottom: 1rem;
-  font-size: 1.25rem
+  padding: 10px;
+}
+
+.blockquote p {
+  font-size: 27px;
 }
 
 .blockquote-footer {
   display: block;
   font-size: 80%;
-  color: #6c757d
+  color: #6c757d;
+  font-size: 18px;
+}
+
+@media (max-width: 992px) {
+  .blockquote {
+    text-align: center;
+    margin-top: -100px;
+  }
+
+  .blockquote p {
+    font-size: 20px;
+  }
+
+  .blockquote-footer {
+    font-size: 14px;
+  }
 }
 
 .blockquote-footer::before {
@@ -4198,6 +4218,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .nav {
+  width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -4227,7 +4248,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .nav-tabs .nav-item {
-  margin-bottom: -1px
+  margin-bottom: -1px;
 }
 
 .nav-tabs .nav-link {
@@ -4259,12 +4280,31 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .nav-pills .nav-link {
-  border-radius: .25rem
+  color: #000000;
+  border-radius: .25rem;
+  border: 1px solid #000000;
+  margin: 15px;
+  width: 300px;
+  text-align: center;
+}
+
+@media(max-width:1200px) {
+  .nav-pills .nav-link {
+    width: 250px;
+    margin: 10px;
+  }
+}
+
+@media(max-width:992px) {
+  .nav-pills .nav-link {
+    width: 350px;
+    margin: 10px;
+  }
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  color: #fff;
-  background-color: #007bff
+  color: #b0b0b0;
+  border: 1px solid #b0b0b0;
 }
 
 .nav-fill .nav-item {
