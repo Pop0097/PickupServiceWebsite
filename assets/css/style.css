@@ -434,6 +434,47 @@
   text-align: center;
 }
 
+/*Code used in gallery.html*/
+/*code used in the images section*/
+.images-area {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.images-area-image {
+  width: 275px;
+  height: 275px;
+  margin-bottom: 20px;
+}
+
+@media (max-width:1200px) {
+  .images-area-image {
+    width: 225px;
+    height: 225px;
+  }
+}
+
+@media (max-width:992px) {
+  .images-area-image {
+    width: 275px;
+    height: 275px;
+  }
+}
+
+@media (max-width:768px) {
+  .images-area-image {
+    width: 225px;
+    height: 225px;
+  }
+}
+
+@media (max-width:576px) {
+  .images-area-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 /*code used in all sections*/
 /*code for the footer (and any other elements that share the same class/type name)*/
 .footer-area {
