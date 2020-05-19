@@ -1,7 +1,7 @@
 /* code for index.html */
 /*code for the header (and any other elements that share the same class/type name)*/
 .header-area {
-  background-color: #f4f4f4;
+  background-color: rgba(244, 244, 244, 0.85);
   width: 80%;
   position: absolute;
   padding: 20px 0;
@@ -49,12 +49,21 @@
   text-decoration: underline;
 }
 
-/*code for the index.html banner (and any other elements that share the same class/type name)*/
-.banner-area {
+/*code for the banner (and any other elements that share the same class/type name)*/
+.banner-area-index {
   font-family: "Playfair Display", serif;
-  background-color: #b0b0b0;
+  color: white;
+  background-image: url(../images/index-banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   position: relative;
   height: 100vh;
+}
+
+.banner-sub-area {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
   padding-top: 50vh;
 }
 
@@ -247,6 +256,7 @@
 
 .slideshow-area {
   max-width: 1000px;
+  height: 330px;
   padding-left: 80px;
   padding-right: 80px;
   padding-top: 40px;
@@ -295,68 +305,17 @@
   font-size: 16px;
 }
 
-/*code for the "Question" in index.html (and any other elements that share the same class/type name)*/
-.question-form-area {
-  min-height: 80vh;
-}
-
-.question-form {
-  max-width: 1000px;
-  padding-left: 40px;
-  padding-right: 80px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-bottom: 40px;
-  position: relative;
-  border: 1px solid black;
-  border-radius: 20px;
-}
-
-.question-form-label {
-  font-size: 16px;
-  font-weight: 1200;
-}
-
-#name-input, #email-input, #subject-input {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid #b0b0b0;
-  height: 40px;
-  padding: 10px;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-#message-input {
-  width: 100%;
-  min-height: 100px;
-  max-height: 300px;
-  font-size: 14px;
-  border-radius: 10px;
-  border: 1px solid #b0b0b0;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-#submit-button {
-  width: 100%;
-  border-radius: 10px;
-  height: 40px;
-  padding: 10px;
-  font-size: 14px;
-  margin-bottom: 20px;
-  background-color: #f4ffff;
-  border: 1px solid #b0b0b0;
-}
-
 /*code for about.html*/
 /*code for the banner in about.html, menu.html, and gallery.html*/
-.banner-area-2 {
+.banner-area-about {
   font-family: "Playfair Display", serif;
-  background-color: #b0b0b0;
+  color: white;
+  background-image: url(../images/about-banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   position: relative;
   height: 100vh;
-  padding-top: 50vh;
 }
 
 /*code for the mission statement*/
@@ -386,12 +345,15 @@
 
 /*code for menu.html*/
 /*code for the banner in menu.html*/
-.banner-area-2 {
+.banner-area-menu {
   font-family: "Playfair Display", serif;
-  background-color: #b0b0b0;
+  color: white;
+  background-image: url(../images/menu-banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   position: relative;
   height: 100vh;
-  padding-top: 50vh;
 }
 
 /*code for the "Title" in menu.html*/
@@ -435,20 +397,73 @@
 }
 
 /*Code used in gallery.html*/
+/*Code used in banner section */
+.banner-area-gallery {
+  font-family: "Playfair Display", serif;
+  color: white;
+  background-image: url(../images/gallery-banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  padding-top: 50vh;
+}
+
 /*code used in the images section*/
 .images-area {
   min-height: 100vh;
   padding: 20px;
 }
 
-.images-area-image {
+.image-section {
+  position: relative;
   width: 275px;
   height: 275px;
   margin-bottom: 20px;
 }
 
+.image-description {
+  padding: 20px;
+  visibility: hidden;
+  top: 0;
+  right: 0;
+  width: 275px;
+  height: 275px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  opacity: 0;
+  position: absolute;
+  font-size: 16px;
+}
+
+.image-section:hover .image-description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.image-section:hover .images-area-image {
+  opacity: 0.5;
+}
+
+.images-area-image {
+  width: 275px;
+  height: 275px;
+  position: relative;
+}
+
 @media (max-width:1200px) {
   .images-area-image {
+    width: 225px;
+    height: 225px;
+  }
+
+  .image-section {
+    width: 225px;
+    height: 225px;
+  }
+
+  .image-description {
     width: 225px;
     height: 225px;
   }
@@ -459,6 +474,16 @@
     width: 275px;
     height: 275px;
   }
+
+  .image-section {
+    width: 275px;
+    height: 275px;
+  }
+
+  .image-description {
+    width: 275px;
+    height: 275px;
+  }
 }
 
 @media (max-width:768px) {
@@ -466,10 +491,30 @@
     width: 225px;
     height: 225px;
   }
+
+  .image-section {
+    width: 225px;
+    height: 225px;
+  }
+
+  .image-description {
+    width: 225px;
+    height: 225px;
+  }
 }
 
 @media (max-width:576px) {
   .images-area-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .image-section {
+    width: 200px;
+    height: 200px;
+  }
+
+  .image-description {
     width: 200px;
     height: 200px;
   }

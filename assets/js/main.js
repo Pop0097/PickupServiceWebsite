@@ -1,5 +1,4 @@
-//Code for the slideshow in "reviews" in index.html
-
+/*Code for the slideshow in "reviews" in index.html*/
 var reviewNumber = 1;
 showReviews(1);
 
