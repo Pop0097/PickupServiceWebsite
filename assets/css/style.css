@@ -62,7 +62,7 @@
 }
 
 .banner-sub-area {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   height: 100%;
   padding-top: 50vh;
 }
@@ -71,6 +71,16 @@
 .information-area {
   position: relative;
   height: 100vh;
+  background-image: url(../images/background-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sub-area {
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  height: 100%;
 }
 
 .intro {
@@ -82,12 +92,23 @@
   font-size: 16px;
 }
 
+.information-area-subtitle {
+  padding-left: 30px;
+}
+
+.information-area-subtitle h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  font-style: italic;
+}
+
 .information-area-image {
   position: relative;
   margin-top: 80px;
   margin-bottom: 80px;
   height: 360px;
   width: 360px;
+  border-radius: 5px;
 }
 
 @media (max-width:992px) {
@@ -99,9 +120,9 @@
     width: 360px;
   }
 
-  .subtitle {
+  .information-area-subtitle {
     margin-top: 10px;
-    padding-left: 30px;
+    text-align: center;
   }
 }
 
@@ -112,6 +133,12 @@
     margin-bottom: 20px;
     height: 300px;
     width: 300px;
+  }
+
+  .intro {
+    text-align: center;
+    margin: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -413,23 +440,25 @@
 /*code used in the images section*/
 .images-area {
   min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
 .image-section {
   position: relative;
-  width: 275px;
-  height: 275px;
+  width: 285px;
+  height: 285px;
   margin-bottom: 20px;
 }
 
 .image-description {
+  border-radius: 5px;
   padding: 20px;
   visibility: hidden;
   top: 0;
   right: 0;
-  width: 275px;
-  height: 275px;
+  width: 285px;
+  height: 285px;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   opacity: 0;
@@ -447,9 +476,10 @@
 }
 
 .images-area-image {
-  width: 275px;
-  height: 275px;
+  width: 285px;
+  height: 285px;
   position: relative;
+  border-radius: 5px;
 }
 
 @media (max-width:1200px) {
@@ -471,18 +501,18 @@
 
 @media (max-width:992px) {
   .images-area-image {
-    width: 275px;
-    height: 275px;
+    width: 295px;
+    height: 295px;
   }
 
   .image-section {
-    width: 275px;
-    height: 275px;
+    width: 295px;
+    height: 295px;
   }
 
   .image-description {
-    width: 275px;
-    height: 275px;
+    width: 295px;
+    height: 295px;
   }
 }
 
@@ -522,17 +552,36 @@
 
 /*code used in all sections*/
 /*code for the footer (and any other elements that share the same class/type name)*/
-.footer-area {
-  background-color: #b0b0b0;
+.footer-area-gallery {
+  background-color: rgba(36, 55, 78);
+  color: white;
+  padding-bottom: 10px;
 }
 
-.footer-widgets {
+.footer-area-menu {
+  background-color: rgba(215, 209, 208);
+  color: black;
+  padding-bottom: 10px;
+}
+
+.footer-area-about {
+  background-color: rgba(23, 41, 64);
+  color: white;
+  padding-bottom: 10px;
+}
+
+.footer-area-index {
+  background-color: rgba(94, 98, 100);
+  color: white;
+  padding-bottom: 10px;
+}
+
+.footer-widgets-1, .footer-widgets-2 {
   padding: 20px;
-  background-color: #b0b0b0;
 }
 
-.footer-widgets a {
-  color: #131230;
+.footer-widgets-1 a {
+  color: white;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
@@ -541,9 +590,19 @@
   text-decoration: none;
 }
 
-.footer-widgets a:hover {
+.footer-widgets-1 a:hover, .footer-widgets-2 a:hover {
   font-weight: 700;
   color: red;
+}
+
+.footer-widgets-2 a {
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 13px;
+  text-decoration: none;
 }
 
 .footer-widgets h6 {
@@ -552,8 +611,9 @@
   margin-bottom: -10px;
 }
 
-.credits-area {
-  background-color: #f4f4f4;
+/*code used for body*/
+.about-body {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /*General code*/
