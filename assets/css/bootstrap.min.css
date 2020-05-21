@@ -425,7 +425,6 @@ hr {
 }
 
 .blockquote {
-  margin-bottom: 1rem;
   padding: 10px;
 }
 
@@ -436,7 +435,7 @@ hr {
 .blockquote-footer {
   display: block;
   font-size: 80%;
-  color: #6c757d;
+  color: white;
   font-size: 18px;
 }
 
@@ -4303,8 +4302,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  color: #b0b0b0;
-  border: 1px solid #b0b0b0;
+  color: #e0e0e0;
+  border: 2px solid #e0e0e0;
 }
 
 .nav-fill .nav-item {

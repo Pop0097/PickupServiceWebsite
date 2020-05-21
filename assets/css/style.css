@@ -41,8 +41,8 @@
 }
 
 .select-menu table tr td a:hover {
-  font-weight: 700;
-  color: red;
+  font-weight: 800;
+  color: black;
 }
 
 .select-menu table tr td a.active {
@@ -53,34 +53,28 @@
 .banner-area-index {
   font-family: "Playfair Display", serif;
   color: white;
-  background-image: url(../images/index-banner.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
   height: 100vh;
+  min-height: 500px;
+  background-image: url(../images/index-banner.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .banner-sub-area {
   background-color: rgba(0, 0, 0, 0.3);
-  height: 100%;
-  padding-top: 50vh;
+  height: 100vh;
+  min-height: 500px;
+  padding-top: calc(30vh + 200px);
 }
 
 /*code for the "quick information" in index.html(and any other elements that share the same class/type name)*/
 .information-area {
   position: relative;
-  height: 100vh;
-  background-image: url(../images/background-image.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.sub-area {
-  background-color: rgba(0, 0, 0, 0);
-  position: absolute;
-  height: 100%;
+  min-height: 100vh;
+  color: white;
+  background-color: rgba(40, 46, 52, 0.8);
 }
 
 .intro {
@@ -108,7 +102,8 @@
   margin-bottom: 80px;
   height: 360px;
   width: 360px;
-  border-radius: 5px;
+  border: 2px solid #b0b0b0;
+  border-radius: 10px;
 }
 
 @media (max-width:992px) {
@@ -124,6 +119,12 @@
     margin-top: 10px;
     text-align: center;
   }
+
+  .intro {
+    text-align: center;
+    margin: 10px;
+    margin-right: 10px;
+  }
 }
 
 @media (max-width:768px) {
@@ -133,12 +134,6 @@
     margin-bottom: 20px;
     height: 300px;
     width: 300px;
-  }
-
-  .intro {
-    text-align: center;
-    margin: 10px;
-    margin-right: 10px;
   }
 }
 
@@ -155,7 +150,19 @@
 /*code for the "menu preview" in index.html (and any other elements that share the same class/type name)*/
 .menu-preview-area {
   min-height: 100vh;
-  margin-bottom: 100px;
+  margin-top: -5px;
+  background-image: url(../images/index-background-image.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu-sub-area {
+  min-height: 100vh;
+  padding-bottom: 100px;
+  padding-top: 30px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .menu-preview-item {
@@ -165,7 +172,7 @@
 
 .item {
   width: 250px;
-  background-color: #f4f4f4;
+  background-color: rgba(170, 170, 170);
   border-radius: 20px 20px 20px 20px;
 }
 
@@ -207,7 +214,7 @@
 
 .redirect-link {
   font-size: 16px;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .redirect-link a {
@@ -224,7 +231,6 @@
 @media(max-width:992px) {
   .item {
     width: 205px;
-    background-color: #f4f4f4;
   }
 
   .menu-preview-image {
@@ -248,17 +254,16 @@
 
 @media(max-width:576px) {
   .item {
-    width: 160px;
-    background-color: #f4f4f4;
+    width: 190px;
   }
 
   .menu-preview-image {
-    height: 160px;
-    width: 160px;
+    height: 190px;
+    width: 190px;
   }
 
   .menu-preview-description {
-    width: 160px;
+    width: 190px;
     padding-left: 2px;
     padding-right: 2px;
     padding-top: 10px;
@@ -274,7 +279,7 @@
 /*code for the "reviews" in index.html (and any other elements that share the same class/type name)*/
 .reviews-area {
   min-height: 60vh;
-  margin-bottom: 100px;
+  background-color: rgba(40, 46, 52, 0.8);
 }
 
 .reviews {
@@ -283,7 +288,7 @@
 
 .slideshow-area {
   max-width: 1000px;
-  height: 330px;
+  min-height: 330px;
   padding-left: 80px;
   padding-right: 80px;
   padding-top: 40px;
@@ -337,37 +342,57 @@
 .banner-area-about {
   font-family: "Playfair Display", serif;
   color: white;
-  background-image: url(../images/about-banner.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
   height: 100vh;
+  min-height: 500px;
+  background-image: url(../images/about-banner.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*code for the mission statement*/
 .mission-statment-area {
   min-height: 100vh;
+  background-image: url(../images/about-background-image-1.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.mission-statement-sub-area {
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*code for the service information*/
 .service-information-area {
-  min-height: 100vh;
+  min-height: 50vh;
+  background-color: rgba(200, 200, 200);
 }
 
 .service-information-text {
   font-size: 16px;
-  padding: 40px;
-  margin-bottom: auto;
   display: block;
 }
 
-@media (max-width:992px) {
-  .service-information-text {
-    font-size: 16px;
-    padding: 20px;
-    margin-bottom: -30px;
-  }
+/*code for about the chef*/
+.chef-biography-area {
+  min-height: 100vh;
+  padding: 0px;
+  background-image: url(../images/about-background-image-2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.chef-biography-sub-area {
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /*code for menu.html*/
@@ -376,17 +401,19 @@
   font-family: "Playfair Display", serif;
   color: white;
   background-image: url(../images/menu-banner.jpg);
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
   height: 100vh;
+  min-height: 500px;
 }
 
 /*code for the "Title" in menu.html*/
 .title-area {
   height: 15vh;
   padding: 40px;
+  margin-bottom: 10px;
 }
 
 .menu-title-text h2 {
@@ -429,18 +456,18 @@
   font-family: "Playfair Display", serif;
   color: white;
   background-image: url(../images/gallery-banner.jpg);
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
   height: 100vh;
-  padding-top: 50vh;
+  min-height: 500px;
+  padding-top: calc(30vh + 200px);
 }
 
 /*code used in the images section*/
 .images-area {
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
@@ -452,7 +479,7 @@
 }
 
 .image-description {
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 20px;
   visibility: hidden;
   top: 0;
@@ -479,7 +506,8 @@
   width: 285px;
   height: 285px;
   position: relative;
-  border-radius: 5px;
+  border-radius: 10px;
+  border: 2px solid #b0b0b0;
 }
 
 @media (max-width:1200px) {
@@ -559,7 +587,7 @@
 }
 
 .footer-area-menu {
-  background-color: rgba(215, 209, 208);
+  background-color: rgba(180, 174, 173);
   color: black;
   padding-bottom: 10px;
 }
@@ -591,8 +619,7 @@
 }
 
 .footer-widgets-1 a:hover, .footer-widgets-2 a:hover {
-  font-weight: 700;
-  color: red;
+  font-weight: 800;
 }
 
 .footer-widgets-2 a {
@@ -612,8 +639,20 @@
 }
 
 /*code used for body*/
+.gallery-body {
+  background-color: rgba(200, 200, 200);
+}
+
 .about-body {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.index-body {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-body {
+  background-color: rgba(200, 200, 200);
 }
 
 /*General code*/
