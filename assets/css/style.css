@@ -17,7 +17,7 @@
   font-weight: 1000;
   font-style: italic;
   padding: 5px;
-  foat: center;
+  float: center;
   text-align: center;
 }
 
@@ -151,7 +151,7 @@
 .menu-preview-area {
   min-height: 100vh;
   margin-top: -5px;
-  background-image: url(../images/index-background-image.jpg);
+  background-image: url(../images/index-background-image-1.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -162,7 +162,7 @@
   min-height: 100vh;
   padding-bottom: 100px;
   padding-top: 30px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .menu-preview-item {
@@ -225,7 +225,7 @@
 
 .redirect-link a:hover {
   font-weight: 700;
-  color: red;
+  text-decoration: none;
 }
 
 @media(max-width:992px) {
@@ -288,7 +288,7 @@
 
 .slideshow-area {
   max-width: 1000px;
-  min-height: 330px;
+  min-height: 275px;
   padding-left: 80px;
   padding-right: 80px;
   padding-top: 40px;
@@ -337,6 +337,71 @@
   font-size: 16px;
 }
 
+/*code for the "Question" in index.html (and any other elements that share the same class/type name)*/
+.question-form-area {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-height: 90vh;
+  background-image: url(../images/index-background-image-2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#myform {
+  max-width: 1000px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.question-form-label {
+  font-size: 16px;
+  font-weight: 1200;
+}
+
+#name-input, #email-input, #subject-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #b0b0b0;
+  height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#message-input {
+  width: 100%;
+  min-height: 100px;
+  max-height: 300px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #b0b0b0;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#submit-button {
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 204, 102);
+  border: 1px solid #b0b0b0;
+}
+
+#submit-button:hover {
+  font-weight: 700;
+  font-size: 15px;
+}
+
 /*code for about.html*/
 /*code for the banner in about.html, menu.html, and gallery.html*/
 .banner-area-about {
@@ -376,6 +441,17 @@
 .service-information-text {
   font-size: 16px;
   display: block;
+}
+
+.redirect-link-2 {
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.redirect-link-2:hover {
+  font-weight: 700;
+  text-decoration: none;
 }
 
 /*code for about the chef*/
@@ -420,7 +496,7 @@
   font-family: "Playfair Display", serif;
   font-size: 50px;
   font-style: italic;
-  foat: center;
+  float: center;
 }
 
 /*code for the "items" in menu.html*/
@@ -668,7 +744,6 @@
 }
 
 .subtitle-2 {
-  margin-top: 40px;
   padding-left: 30px;
   margin-bottom: 40px;
 }
@@ -682,7 +757,7 @@
   font-family: "Playfair Display", serif;
   font-size: 35px;
   font-style: italic;
-  foat: center;
+  float: center;
 }
 
 .subtitle p {
