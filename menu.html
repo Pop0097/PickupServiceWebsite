@@ -253,11 +253,6 @@
   <!-- items ends -->
 
 
-  <p id="array-l"></p>
-  <p id="items-l"></p>
-
-
-
   <!-- shopping cart begins -->
   <section class="shopping-cart-area">
     <div class="container" style="background-color:#a7a9a7;">
@@ -279,10 +274,11 @@
         <div class="order-form-area center">
           <form id="orderForm" method="post" class="center">
             <div class="row">
-              <input type="text" name="from_order" id="from_order">
+              <input type="text" name="from_order" id="order-input" value="." />
+              <input type="text" name="from_price" id="order-price-input" value="." />
               <div class="col-12 col-md-6">
                 <label class="question-form-label">Name</label>
-                <input type="text" name="from_name" id="name-input" />
+                <input type="text" name="from_name" id="name-input" value="a" />
               </div>
               <div class="col-12 col-md-6">
                 <label class="question-form-label"> Email</label>
@@ -290,14 +286,14 @@
               </div>
               <div class="col-12 col-md-6">
                 <label class="question-form-label">Pick-up Day (DD/MM/YYYY)</label>
-                <nput type="text" name="from_pick_day" id="pick-day-input" cols="15"></textarea>
+                <input type="text" name="from_pick_day" id="pick-day-input" cols="15" />
               </div>
               <div class="col-12 col-md-6">
                 <label class="question-form-label">Pick-up Time (24 hour time)</label>
-                <nput type="text" name="from_pick_day" id="pick-day-input" cols="15"></textarea>
+                <input type="text" name="from_pick_time" id="pick-time-input" cols="15" />
               </div>
               <div class="col-12">
-                <button id="purchase-button" type="button"> Order </button>
+                <button id="purchase-button"> Order </button>
               </div>
             </div>
           </form>
@@ -306,7 +302,6 @@
     </div>
   </section>
   <!-- shopping cart ends -->
-
 
   <!-- footer starts -->
   <footer class="footer-area-menu">
@@ -334,6 +329,38 @@
     </div>
   </footer>
   <!-- footer ends -->
+
+  <!-- JS code -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("user_7grQC1kG8unkFbUAyjNe3");
+    })();
+  </script>
+
+  <!-- JS used to send emails -->
+  <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        //ID tags associated with Emailjs account
+        var service_id = "Dhruv_R";
+        var template_id = "pickup_orde";
+
+        //Emailjs api used to send the form via email
+        emailjs.sendForm(service_id, template_id, this);
+
+        //Clears the input fields so user knows form is submitted
+        document.getElementById("name-input").value = '';
+        document.getElementById("email-input").value = '';
+        document.getElementById("pick-day-input").value = '';
+        document.getElementById("pick-time-input").value = '';
+        document.getElementById("order-input").value = '';
+        document.getElementById("order-price-input").value = '';
+      });
+    }
+  </script>
 
 </body>
 

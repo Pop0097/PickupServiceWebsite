@@ -43,6 +43,9 @@ function purchasedClicked(){
   document.getElementsByClassName('cart')[0].style.visibility = 'hidden';
   document.getElementsByClassName('cart-text')[0].style.visibility = 'visible';
   document.getElementsByClassName('cart-text')[0].innerHTML = 'Thank you for your purchase.<br>You will be contacted by Pradeep\'s Cuisine shortly.';
+  orderArray = [];
+  document.getElementById('order-input').value = '';
+  document.getElementById('order-price-input').value = '';
 }
 
 //removes item from the cart
@@ -120,6 +123,7 @@ function updateCartTotal(){
   }
   totalPrice = Math.round(totalPrice*100)/100;
   document.getElementsByClassName('cart-total-price')[0].innerText = '$' + totalPrice;
+  document.getElementById('order-price-input').value = '$' + totalPrice;
 }
 
 function addItemToCart(title, price, imageSrc){
@@ -158,17 +162,10 @@ function addItemToCart(title, price, imageSrc){
 
 function updateItemsList(){
   if(orderArray.length == 0){
-    document.getElementById('from_order').value = "";
+    document.getElementById('order-input').value = "";
   }
   else{
     var x = orderArray.toString();
-    document.getElementById('from_order').value = x;
+    document.getElementById('order-input').value = x;
   }
-
-
-  document.getElementById("array-l").innerHTML = "";
-  document.getElementById('items-l').innerHTML = document.getElementById('from_order').value;
-  document.getElementById("array-l").innerHTML = "";
-  document.getElementById("array-l").innerHTML = orderArray.toString();
-
 }
