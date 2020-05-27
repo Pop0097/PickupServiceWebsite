@@ -239,7 +239,7 @@
                       whose length is the magnitude.
                     </p>
                     <p><i>Serves 8</i></p>
-                    <p class="item-price">$12.99 </p>
+                    <p class="item-price">$15.99 </p>
                     <button class="add-to-cart-button" type="button">Order!</button>
                   </div>
                 </div>
@@ -252,18 +252,21 @@
   </section>
   <!-- items ends -->
 
+
+  <p id="array-l"></p>
+  <p id="items-l"></p>
+
+
+
   <!-- shopping cart begins -->
   <section class="shopping-cart-area">
-    <div class="container">
-      <p class="thank-you-text"></p>
-      <div class="cart">
-        <div class="row cart-row">
-          <div class="col-12">
-            <span class="cart-item cart-header cart-column"> Item </span>
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-          </div>
+    <div class="container" style="background-color:#a7a9a7;">
+      <p class="cart-text text-center"></p>
+      <div class="cart center">
+        <div class="cart-row">
+          <span class="cart-item cart-header cart-column">Item</span>
+          <span class="cart-price cart-header cart-column">Price</span>
+          <span class="cart-quantity cart-header cart-column">Quantity</span>
         </div>
         <div class="cart-items">
         </div>
@@ -272,7 +275,32 @@
             <strong class="cart-total-title">Total</strong>
             <span class="cart-total-price">$0</span>
           </div>
-          <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </div>
+        <div class="order-form-area center">
+          <form id="orderForm" method="post" class="center">
+            <div class="row">
+              <input type="text" name="from_order" id="from_order">
+              <div class="col-12 col-md-6">
+                <label class="question-form-label">Name</label>
+                <input type="text" name="from_name" id="name-input" />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="question-form-label"> Email</label>
+                <input type="text" name="reply_to" id="email-input" />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="question-form-label">Pick-up Day (DD/MM/YYYY)</label>
+                <nput type="text" name="from_pick_day" id="pick-day-input" cols="15"></textarea>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="question-form-label">Pick-up Time (24 hour time)</label>
+                <nput type="text" name="from_pick_day" id="pick-day-input" cols="15"></textarea>
+              </div>
+              <div class="col-12">
+                <button id="purchase-button" type="button"> Order </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
