@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
-  <script defer src="assets/js/main.js"></script>
 </head>
 
 <body class="index-body">
@@ -250,7 +249,7 @@
         <h3>Ask a question</h3>
       </div>
       <div class="form-area center">
-        <form id="myform" class="center" style="color: white;font-weight:700;background-color: rgba(78, 83, 87);">
+        <form id="myform" method="post" class="center" style="color:white;font-weight:700;background-color: rgba(78, 83, 87);">
           <div class="row">
             <div class="col-12 col-md-6">
               <label class="question-form-label">Name</label>
@@ -273,32 +272,6 @@
             </div>
           </div>
         </form>
-
-        <!--
-        <form class="question-form text-center center" id="myform" method="post" style="color: white;font-weight:700;background-color: rgba(78, 83, 87);">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <label class="question-form-label">Name: </label><br>
-              <input type="text" id="name-input" name="from_name" value="Name" maxlength="60">
-            </div>
-            <div class="col-12 col-md-6">
-              <label class="question-form-label">Email Address: </label><br>
-              <input type="text" id="email-input" name="reply_to" value="Email" maxlength="60">
-            </div>
-            <div class="col-12">
-              <label class="question-form-label">Subject:</label><br>
-              <input type="text" id="subject-input" name="from_subject" value="Subject" maxlength="150">
-            </div>
-            <div class="col-12">
-              <label class="question-form-label">Message:</label><br>
-              <textarea id="message-input" name="messge" value="message_html" cols="15"></textarea>
-            </div>
-            <div class="col-12">
-              <button id="submit-button">Submit</button>
-            </div>
-          </div>
-        </form>
-      -->
       </div>
     </div>
   </section>
@@ -333,14 +306,39 @@
   </footer>
   <!-- footer ends -->
 
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+  <!-- JS code -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {
       emailjs.init("user_7grQC1kG8unkFbUAyjNe3");
     })();
   </script>
+  <script defer src="assets/js/slideshow.js"></script>
+
+  <!-- JS used to send emails -->
+  <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById('myform').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        //ID tags associated with Emailjs account
+        var service_id = "Dhruv_R";
+        var template_id = "template_2VPl8QHL";
+
+        //Emailjs api used to send the form via email
+        emailjs.sendForm(service_id, template_id, this);
+
+        //Clears the input fields so user knows form is submitted
+        document.getElementById("name-input").value = '';
+        document.getElementById("email-input").value = '';
+        document.getElementById("subject-input").value = '';
+        document.getElementById("message-input").value = '';
+      });
+    }
+  </script>
+
+
+
 </body>
 
 </html>

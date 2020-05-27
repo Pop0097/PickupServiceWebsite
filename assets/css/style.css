@@ -402,6 +402,11 @@
   font-size: 15px;
 }
 
+#submit-button:active {
+  color: rgba(205, 154, 52);
+  background-color: rgba(205, 154, 52);
+}
+
 /*code for about.html*/
 /*code for the banner in about.html, menu.html, and gallery.html*/
 .banner-area-about {
