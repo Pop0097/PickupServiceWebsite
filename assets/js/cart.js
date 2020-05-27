@@ -11,9 +11,6 @@ var orderArray = []; //contains the user's order
 function ready(){
   document.getElementsByClassName('cart-text')[0].innerHTML = 'Your order will be displayed here when you add items.';
   document.getElementsByClassName('cart')[0].style.visibility = 'hidden';
-
-  document.getElementById('purchase-button').addEventListener('click', purchasedClicked);
-
   var removeItemButtons = document.getElementsByClassName('text-danger');
   //when the "remove" button is clicked, the item is removed from the cart
   for (var i = 0; i < removeItemButtons.length; i++){

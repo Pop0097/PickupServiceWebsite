@@ -274,23 +274,23 @@
         <div class="order-form-area center">
           <form id="orderForm" method="post" class="center">
             <div class="row">
-              <input type="text" name="from_order" id="order-input" value="." />
-              <input type="text" name="from_price" id="order-price-input" value="." />
+              <input type="text" name="from_order" id="order-input" />
+              <input type="text" name="from_price" id="order-price-input" />
               <div class="col-12 col-md-6">
                 <label class="question-form-label">Name</label>
-                <input type="text" name="from_name" id="name-input" value="a" />
+                <input type="text" name="from_name" id="name-input" required />
               </div>
               <div class="col-12 col-md-6">
                 <label class="question-form-label"> Email</label>
-                <input type="text" name="reply_to" id="email-input" />
+                <input type="text" name="reply_to" id="email-input" required />
               </div>
               <div class="col-12 col-md-6">
                 <label class="question-form-label">Pick-up Day (DD/MM/YYYY)</label>
-                <input type="text" name="from_pick_day" id="pick-day-input" cols="15" />
+                <input type="text" name="from_pick_day" id="pick-day-input" cols="15" maxlength="10" required />
               </div>
               <div class="col-12 col-md-6">
                 <label class="question-form-label">Pick-up Time (24 hour time)</label>
-                <input type="text" name="from_pick_time" id="pick-time-input" cols="15" />
+                <input type="text" name="from_pick_time" id="pick-time-input" cols="15" maxlength="5" required />
               </div>
               <div class="col-12">
                 <button id="purchase-button"> Order </button>
@@ -340,26 +340,22 @@
 
   <!-- JS used to send emails -->
   <script type="text/javascript">
-    window.onload = function() {
-      document.getElementById('orderForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var orderForm = document.getElementById('orderForm');
 
-        //ID tags associated with Emailjs account
-        var service_id = "Dhruv_R";
-        var template_id = "pickup_orde";
+      //ID tags associated with Emailjs account
+      var service_id = "Dhruv_R";
+      var template_id = "pickup_orde";
 
-        //Emailjs api used to send the form via email
-        emailjs.sendForm(service_id, template_id, this);
+      //ID tags associated with Emailjs account
+      var service_id = "default_service";
+      var template_id = "pickup_orde";
 
-        //Clears the input fields so user knows form is submitted
-        document.getElementById("name-input").value = '';
-        document.getElementById("email-input").value = '';
-        document.getElementById("pick-day-input").value = '';
-        document.getElementById("pick-time-input").value = '';
-        document.getElementById("order-input").value = '';
-        document.getElementById("order-price-input").value = '';
-      });
-    }
+      //Emailjs api used to send the form via email
+      emailjs.sendForm(service_id, template_id, orderForm);
+      purchasedClicked();
+    });
   </script>
 
 </body>
