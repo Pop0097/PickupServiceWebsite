@@ -2,22 +2,58 @@ var alreadyOrdered = true;
 var orderArray = []; //contains the user's order
 
 //checks if the page has loaded
-if (document.readyState == 'loading') {
-  document.addEventListener('DOMContentLoaded', ready);
-} else {
+ready();
+
+//if page is loaded, then event listeners are made for the buttons
+function ready(){
   //making use of localStorage to keep track of user's order even if they leave the menu.html page
   if(localStorage.hasOwnProperty('order-input') == false && localStorage.hasOwnProperty('order-price-input') == false){
-    console.log("localStorage not defined yet");
+    console.log('localStorage not defined yet');
     alreadyOrdered = false;
-    localStorage.setItem('order-input', '');
+    localStorage.setItem('order-input', null);
     localStorage.setItem('order-price-input', '0.00');
   }
-  else{
-    orderArray = localStorage.getItem('order-input').split(',');
-    console.log("Iniitial: ", orderArray.toString());
+  else {
+    if(localStorage.getItem('order-input').indexOf("(") == -1){ //if there are no items in the order, then the user has not ordered
+      console.log("here");
+      localStorage.removeItem('order-input');
+      localStorage.setItem('order-input', null);
+      alreadyOrdered = false;
+    }
+    else{
+      console.log("Pre-redefine localStorage", localStorage.getItem('order-input'));
+      orderArray = localStorage.getItem('order-input').split(',');
+    }
+    console.log("refefine", orderArray.length);
+    console.log(localStorage.getItem('order-input'));
+
+    console.log(orderArray.length);
+
     outputCart();
   }
-  ready();
+
+  if(!alreadyOrdered){
+    document.getElementsByClassName('cart-text')[0].innerHTML = 'Your order will be displayed here when you add items.';
+    document.getElementsByClassName('cart')[0].style.visibility = 'hidden';
+  }
+  var removeItemButtons = document.getElementsByClassName('text-danger');
+  //when the "remove" button is clicked, the item is removed from the cart
+  for (var i = 0; i < removeItemButtons.length; i++){
+    var button = removeItemButtons[i];
+    button.addEventListener('active', removeCartItem);
+  }
+
+  var quantityInputs = document.getElementsByClassName('cart-quantity-input');
+  for (var i = 0; i < quantityInputs.length; i++){
+    var input = quantityInputs[i];
+    input.addEventListener('change', changeQuantity);
+  }
+
+  var addToCartButtons = document.getElementsByClassName('add-to-cart-button');
+  for (var i = 0; i < addToCartButtons.length; i++){
+    var button = addToCartButtons[i];
+    button.addEventListener('click', addToCartClicked);
+  }
 }
 
 //if the cart was already made, then the cart items will be outputted
@@ -48,13 +84,12 @@ function outputCart(){
     var cartRowContents = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-            <span class="cart-item-title">${title}</span>
+            <span class="cart-item-title">${title}<br><p class="text-danger">Remove</p></span>
         </div>
-        <span class="cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="${quantity}">
-            <p class="text-danger">Remove</p>
-        </div>`;
+            <input class="cart-quantity-input center" type="number" value="${quantity}">
+        </div>
+        <span class="cart-price cart-column-2 text-center">${price}</span>`;
     cartRow.innerHTML = cartRowContents;
     cartItems.append(cartRow);
 
@@ -62,32 +97,6 @@ function outputCart(){
     updateCartTotal();
     cartRow.getElementsByClassName('text-danger')[0].addEventListener('click', removeCartItem);
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', changeQuantity);
-  }
-}
-
-//if page is loaded, then event listeners are made for the buttons
-function ready(){
-  if(!alreadyOrdered){
-    document.getElementsByClassName('cart-text')[0].innerHTML = 'Your order will be displayed here when you add items.';
-    document.getElementsByClassName('cart')[0].style.visibility = 'hidden';
-  }
-  var removeItemButtons = document.getElementsByClassName('text-danger');
-  //when the "remove" button is clicked, the item is removed from the cart
-  for (var i = 0; i < removeItemButtons.length; i++){
-    var button = removeItemButtons[i];
-    button.addEventListener('active', removeCartItem);
-  }
-
-  var quantityInputs = document.getElementsByClassName('cart-quantity-input');
-  for (var i = 0; i < quantityInputs.length; i++){
-    var input = quantityInputs[i];
-    input.addEventListener('change', changeQuantity);
-  }
-
-  var addToCartButtons = document.getElementsByClassName('add-to-cart-button');
-  for (var i = 0; i < addToCartButtons.length; i++){
-    var button = addToCartButtons[i];
-    button.addEventListener('click', addToCartClicked);
   }
 }
 
@@ -99,31 +108,31 @@ function purchasedClicked(){ //after purchase is submitted
   updateCartTotal();
   document.getElementsByClassName('cart')[0].style.visibility = 'hidden';
   document.getElementsByClassName('cart-text')[0].style.visibility = 'visible';
-  document.getElementsByClassName('cart-text')[0].innerHTML = 'Thank you for your purchase.<br>You will be contacted by Pradeep\'s Cuisine shortly.';
+  document.getElementsByClassName('cart-text')[0].innerHTML = 'Thank you for your purchase.<br>You will be contacted by Pradeep\'s Cuisine shortly.<br><br> To place another order, first refresh the page.';
   orderArray = [];
   document.getElementById('order-input').value = '';
   document.getElementById('order-price-input').value = '';
 
   localStorage.clear(); //clears local storage after order is complete
-
 }
 
 //removes item from the cart
 function removeCartItem(event){
   var buttonClicked = event.target;
-  var item = buttonClicked.parentElement.parentElement;
-  var name = item.getElementsByClassName('cart-item-title')[0].innerText;
+  var item = buttonClicked.parentElement.parentElement.parentElement;
+  var name = item.getElementsByClassName('cart-item-title')[0].innerText.split('\n');
+  console.log("name: ", name[0]);
 
   for (var i = 0; i < orderArray.length; i++){ //finds deleted item in the order array and removes it
     var temp1 = orderArray[0];
-    if(orderArray[i].indexOf(name) != -1){
+    if(orderArray[i].indexOf(name[0]) != -1){
       orderArray[0] = orderArray[i];
       orderArray[i] = temp1;
       orderArray.shift();
     }
   }
   updateItemsList();
-  buttonClicked.parentElement.parentElement.remove();
+  buttonClicked.parentElement.parentElement.parentElement.remove();
   updateCartTotal();
 
   if(orderArray.length == 0){ //if cart is empty, then it disappears
@@ -141,11 +150,11 @@ function changeQuantity(event){
   }
   else{ //updates the order array
     var item = input.parentElement.parentElement;
-    var name = item.getElementsByClassName('cart-item-title')[0].innerText;
+    var name = item.getElementsByClassName('cart-item-title')[0].innerText.split('\n');
     for (var i = 0; i < orderArray.length; i++){ //finds item in the order array and modifies it
       var temp1 = orderArray[0];
-      if(orderArray[i].indexOf(name) != -1){
-        orderArray[i] = " " + name + " (" + input.value + ")";
+      if(orderArray[i].indexOf(name[0]) != -1){
+        orderArray[i] = ' ' + name[0] + ' (' + input.value + ')';
       }
     }
     updateItemsList();
@@ -195,21 +204,22 @@ function addItemToCart(title, price, imageSrc, quantity){
   var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
 
   for (var i = 0; i < cartItemNames.length; i++) {
-      if (cartItemNames[i].innerText == title) {
+      var x = cartItemNames[i].innerText.split('\n');
+      //console.log("llfd", x[0]);
+      if (x[0] == title) {
           alert('This item is already added to the cart');
           return; //function ends here, preventing rest of the code from executing
       }
   }
   var cartRowContents = `
-      <div class="cart-item cart-column">
-          <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-          <span class="cart-item-title">${title}</span>
-      </div>
-      <span class="cart-price cart-column">${price}</span>
-      <div class="cart-quantity cart-column">
-          <input class="cart-quantity-input" type="number" value="${quantity}">
-          <p class="text-danger">Remove</p>
-      </div>`;
+    <div class="cart-item cart-column">
+        <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+        <span class="cart-item-title">${title}<br><p class="text-danger">Remove</p></span>
+    </div>
+    <div class="cart-quantity cart-column">
+        <input class="cart-quantity-input center" type="number" value="${quantity}">
+    </div>
+    <span class="cart-price cart-column-2">${price}</span>`;
   cartRow.innerHTML = cartRowContents;
   cartItems.append(cartRow);
   updateCartTotal();
@@ -217,20 +227,23 @@ function addItemToCart(title, price, imageSrc, quantity){
   cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', changeQuantity);
 
   //adds item to the array
-  var orderItem = " " + title + " (1)";
+  var orderItem = ' ' + title + ' (1)';
   orderArray.push(orderItem);
   updateItemsList();
 }
 
 function updateItemsList(){
   var x = orderArray.toString();
-  console.log("x ", x);
+  //alert(orderArray.length);
+  console.log(orderArray.length);
+  //console.log('x ', x);
   localStorage.setItem('order-input', x);
+  console.log(localStorage.getItem('order-input'));
 
-  //document.getElementById('order-input-p').innerHTML = "Values: <br>" + localStorage.getItem('order-input') + " <br> " + localStorage.getItem('order-price-input');
+  //document.getElementById('ss').innerText = localStorage.getItem('order-input');
 
   if(orderArray.length == 0){
-    document.getElementById('order-input').value = "";
+    document.getElementById('order-input').value = '';
   }
   else{
     document.getElementById('order-input').value = localStorage.getItem('order-input');
