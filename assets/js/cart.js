@@ -89,7 +89,7 @@ function outputCart(){
         <div class="cart-quantity cart-column">
             <input class="cart-quantity-input center" type="number" value="${quantity}">
         </div>
-        <span class="cart-price cart-column-2 text-center">${price}</span>`;
+        <span class="cart-price-1 cart-column-2 text-center">${price}</span>`;
     cartRow.innerHTML = cartRowContents;
     cartItems.append(cartRow);
 
@@ -108,7 +108,7 @@ function purchasedClicked(){ //after purchase is submitted
   updateCartTotal();
   document.getElementsByClassName('cart')[0].style.visibility = 'hidden';
   document.getElementsByClassName('cart-text')[0].style.visibility = 'visible';
-  document.getElementsByClassName('cart-text')[0].innerHTML = 'Thank you for your purchase.<br>You will be contacted by Pradeep\'s Cuisine shortly.<br><br> To place another order, first refresh the page.';
+  document.getElementsByClassName('cart-text')[0].innerHTML = 'Thank you for ordering with us.<br>You will receive an email from us shortly.<br><br> To place another order, first refresh the page.';
   orderArray = [];
   document.getElementById('order-input').value = '';
   document.getElementById('order-price-input').value = '';
@@ -184,7 +184,7 @@ function updateCartTotal(){
   var totalPrice = 0;
   for(var i = 0; i < cartRows.length; i++){
     var cartRow = cartRows[i];
-    var priceElement = cartRow.getElementsByClassName('cart-price')[0];
+    var priceElement = cartRow.getElementsByClassName('cart-price-1')[0];
     var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0];
     var price = parseFloat(priceElement.innerText.replace('$', ''));
     var quantity = quantityElement.value;
@@ -219,7 +219,7 @@ function addItemToCart(title, price, imageSrc, quantity){
     <div class="cart-quantity cart-column">
         <input class="cart-quantity-input center" type="number" value="${quantity}">
     </div>
-    <span class="cart-price cart-column-2">${price}</span>`;
+    <span class="cart-price-1 cart-column-2">${price}</span>`;
   cartRow.innerHTML = cartRowContents;
   cartItems.append(cartRow);
   updateCartTotal();

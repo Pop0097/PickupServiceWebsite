@@ -43,7 +43,7 @@
 
   <!-- banner starts -->
   <section class="banner-area-menu">
-    <div class="banner-sub-area text-center">
+    <div class="banner-sub-area-2 text-center">
       <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-lg-12 animate__animated animate__fadeIn">
@@ -256,48 +256,54 @@
 
   <!-- shopping cart begins -->
   <section class="shopping-cart-area">
-    <div class="container">
-      <p class="cart-text text-center"></p>
-      <div class="cart center">
-        <div class="cart-row">
-          <span class="cart-item cart-header cart-column">Item</span>
-          <span class="cart-quantity cart-header cart-column">Quantity</span>
-          <span class="cart-price cart-header cart-column-2">Price</span>
+    <div class="sub-area">
+      <div class="container">
+        <div class="subtitle-2 text-center animate__animated animate__fadeIn" style="color:white;">
+          <h3>Your order</h3>
         </div>
-        <div class="cart-items"></div>
-        <div class="cart-row-2">
-          <span class="cart-item cart-column-1"></span>
-          <span class="cart-quantity cart-column-1 cart-total-title">
-            <p>Total:</p>
-          </span>
-          <span class=" cart-price cart-column-2-1 cart-total-price">$0</span>
-        </div>
-        <div class="order-form-area center">
-          <form id="orderForm" method="post" class="center">
-            <div class="row">
-              <input type="text" name="from_order" id="order-input" hidden /><br>
-              <input type="text" name="from_price" id="order-price-input" hidden />
-              <div class="col-12 col-md-6">
-                <label class="question-form-label">Name</label><br>
-                <input type="text" name="from_name" id="name-input" />
+        <p class="cart-text text-center animate__animated animate__fadeIn animate__delay-1s" style="color:white;"></p>
+        <div class="cart center animate__animated animate__fadeIn">
+          <div class="cart-row animate__animated animate__fadeIn">
+            <span class="cart-item cart-header cart-column">Item</span>
+            <span class="cart-quantity cart-header cart-column">Quantity</span>
+            <span class="cart-price cart-header cart-column-2">Price</span>
+          </div>
+          <div class="cart-items animate__animated animate__fadeIn"></div>
+          <div class="cart-row-2 animate__animated animate__fadeIn">
+            <span class="cart-item cart-column-1"></span>
+            <span class="cart-quantity cart-column-1 cart-total-title">
+              <p>Total</p>
+            </span>
+            <span class=" cart-price cart-column-2-1 cart-total-price">$0</span>
+          </div>
+          <hr style="border: 1px solid white; margin-bottom: 10px; margin-top: 0px;">
+          <div class="order-form-area center animate__animated animate__fadeIn">
+            <form id="orderForm" method="post" class="center text-center">
+              <div class="row">
+                <input type="text" name="from_order" id="order-input" hidden /><br>
+                <input type="text" name="from_price" id="order-price-input" hidden />
+                <div class="col-12 col-md-6">
+                  <label class="order-form-label">Name</label><br>
+                  <input type="text" name="from_name" id="name-input" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="order-form-label"> Email</label><br>
+                  <input type="text" name="reply_to" id="email-input" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="order-form-label">Pick-up Day (DD/MM/YYYY)</label><br>
+                  <input type="text" name="from_pick_day" id="pick-day-input" cols="15" maxlength="10" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="order-form-label">Pick-up Time (24 hour time)</label><br>
+                  <input type="text" name="from_pick_time" id="pick-time-input" cols="15" maxlength="5" required />
+                </div>
+                <div class="col-12">
+                  <button id="submit-button"> Order </button>
+                </div>
               </div>
-              <div class="col-12 col-md-6">
-                <label class="question-form-label"> Email</label><br>
-                <input type="text" name="reply_to" id="email-input" />
-              </div>
-              <div class="col-12 col-md-6">
-                <label class="question-form-label">Pick-up Day (DD/MM/YYYY)</label><br>
-                <input type="text" name="from_pick_day" id="pick-day-input" cols="15" maxlength="10" />
-              </div>
-              <div class="col-12 col-md-6">
-                <label class="question-form-label">Pick-up Time (24 hour time)</label><br>
-                <input type="text" name="from_pick_time" id="pick-time-input" cols="15" maxlength="5" />
-              </div>
-              <div class="col-12">
-                <button id="submit-button"> Order </button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -354,7 +360,7 @@
       var template_id = "pickup_orde";
 
       //Emailjs api used to send the form via email
-      //emailjs.sendForm(service_id, template_id, orderForm);
+      emailjs.sendForm(service_id, template_id, orderForm);
       purchasedClicked();
     });
   </script>

@@ -69,6 +69,12 @@
   padding-top: calc(30vh + 200px);
 }
 
+.banner-sub-area-2 {
+  height: 100vh;
+  min-height: 500px;
+  padding-top: calc(30vh + 200px);
+}
+
 /*code for the "quick information" in index.html(and any other elements that share the same class/type name)*/
 .information-area {
   position: relative;
@@ -523,7 +529,7 @@
 }
 
 .add-to-cart-button:hover {
-  background-color: #81B42C;
+  font-weight: 600;
   border: 1px solid #b0b0b0;
 }
 
@@ -537,7 +543,10 @@
 }
 
 .cart {
-  padding: 30px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
 }
 
 .cart-header {
@@ -571,7 +580,6 @@
   display: flex;
   align-items: right;
   margin-right: 30px;
-  padding-bottom: 10px;
   margin-top: 10px;
 }
 
@@ -579,7 +587,6 @@
   display: flex;
   align-items: right;
   margin-right: 0px;
-  padding-bottom: 10px;
   margin-top: 10px;
 }
 
@@ -588,6 +595,12 @@
 }
 
 .cart-price {
+  width: 20%;
+  font-size: 18px;
+  color: white;
+}
+
+.cart-price-1 {
   width: 20%;
   font-size: 16px;
   color: white;
@@ -656,12 +669,6 @@
   font-size: 16px;
 }
 
-.btn-purchase {
-  display: block;
-  margin: 40px auto 80px auto;
-  font-size: 16px;
-}
-
 @media (max-width: 768px) {
   .cart-item-image {
     width: 0px;
@@ -682,28 +689,38 @@
 
   .cart-price {
     width: 30%;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
 /*Code used for the order form*/
 .shopping-cart-area {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  min-height: 90vh;
-  /*
-  background-image: url(../images/index-background-image-2.jpg);
+  background-image: url(../images/menu-background-image-1.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  */
 }
 
 .cart {
   color: white;
   background-color: rgba(78, 83, 87);
   border-radius: 25px;
+}
+
+#pick-day-input, #pick-time-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #b0b0b0;
+  height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.order-form-label {
+  font-weight: 700;
+  font-size: 16px;
 }
 
 /*Code used in gallery.html*/
@@ -716,9 +733,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  min-height: 500px;
-  padding-top: calc(30vh + 200px);
 }
 
 /*code used in the images section*/
@@ -942,4 +956,11 @@
 
 .subtitle p {
   font-size: 16px;
+}
+
+.sub-area {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-height: 90vh;
 }
