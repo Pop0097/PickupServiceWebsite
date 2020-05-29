@@ -82,7 +82,7 @@ function outputCart(){
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
 
     var cartRowContents = `
-        <div class="cart-item cart-column">
+        <div class="cart-item cart-column"">
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
             <span class="cart-item-title">${title}<br><p class="text-danger">Remove</p></span>
         </div>
@@ -107,7 +107,6 @@ function purchasedClicked(){ //after purchase is submitted
   }
   updateCartTotal();
   document.getElementsByClassName('cart')[0].style.visibility = 'hidden';
-  document.getElementsByClassName('cart-text')[0].style.visibility = 'visible';
   document.getElementsByClassName('cart-text')[0].innerHTML = 'Thank you for ordering with us.<br>You will receive an email from us shortly.<br><br> To place another order, first refresh the page.';
   orderArray = [];
   document.getElementById('order-input').value = '';
@@ -137,7 +136,6 @@ function removeCartItem(event){
 
   if(orderArray.length == 0){ //if cart is empty, then it disappears
     document.getElementsByClassName('cart')[0].style.visibility = 'hidden';
-    document.getElementsByClassName('cart-text')[0].style.visibility = 'visible';
     document.getElementsByClassName('cart-text')[0].innerHTML = 'Your order will be displayed here when you add items.';
   }
 }
@@ -165,8 +163,8 @@ function changeQuantity(event){
 //adds item to the cart
 function addToCartClicked(event){
   document.getElementsByClassName('cart')[0].style.visibility = 'visible';
-  document.getElementsByClassName('cart-text')[0].innerHTML = '';
-  document.getElementsByClassName('cart-text')[0].style.visibility = 'hidden';
+  document.getElementsByClassName('cart-text')[0].innerHTML =
+    'You can only order four of each item.<br>Orders must be placed at least 48 hours in advance (orders with more than 8 items should be placed at least 72 hours in advance).';
 
   var button = event.target;
   var shopItem = button.parentElement;
