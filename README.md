@@ -1,5 +1,5 @@
 # Pickup_Service_Website
-A website for a cuisine pickup/takeout service. I made this for my uncle (who is a great chef) as a present. 
+A template website for a cuisine pickup/takeout service. I made this template for my uncle as a present. (All relevant text and images will be added privately by my uncle and thus won't be visible on this repository). 
 
 
 # How to deploy the website 
